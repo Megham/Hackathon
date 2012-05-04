@@ -8,10 +8,24 @@ Released for free under a Creative Commons Attribution 2.5 License
 body {
 	margin: 0;
 	padding: 0;
-	background: #181818 url(images/wrapper-background.png) repeat;
+	background: #181818;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #FFFFFF;
+}
+
+#background {
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    left: 0px; 
+    top: 0px; 
+    z-index: -1;
+}
+
+.stretch {
+    width:100%;
+    height:100%;
 }
 
 h1, h2, h3 {
@@ -23,7 +37,8 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 1.5em;
+	margin-left: 10px;
 }
 
 h2 {
@@ -103,7 +118,7 @@ img.aligncenter {
 }
 
 #logo h1 {
-	letter-spacing: -5px;
+  letter-spacing: -5px;
 	text-align: center;
 	text-transform: lowercase;
 	font-size: 80px;
@@ -112,6 +127,7 @@ img.aligncenter {
 
 #logo h1 a {
 	color: #FFFFFF;
+  text-shadow: 2px 2px 34px white;
 }
 
 #logo p {
@@ -170,7 +186,7 @@ img.aligncenter {
 	height: 60px;
 	margin: 0px auto;
 	padding: 0px 20px 0px 20px;
-	background: #33820F url(images/menu-wrapper-bg.png) repeat-x left top;
+	background: orange;
 }
 
 #menu ul {
@@ -195,7 +211,7 @@ img.aligncenter {
 	letter-spacing: -1px;
 	text-decoration: none;
 	text-transform: lowercase;
-	text-shadow: 2px 2px 2px #2E7C0E;
+	text-shadow: 2px 2px 2px black;
 	font-family: 'Abel', sans-serif;	
 	font-size: 24px;
 	font-weight: normal;
@@ -204,14 +220,14 @@ img.aligncenter {
 }
 
 #menu .current_page_item a {
-	text-shadow: 2px 2px 2px #1B5803;
-	background: #276D05;
+	text-shadow: 2px 2px 2px black;
+	background: #980000;
 }
 
 #menu a:hover {
-	background: #276D05;
+	background: #980000;
 	text-decoration: none;
-	text-shadow: 2px 2px 2px #1B5803;
+	text-shadow: 2px 2px 2px black;
 	color: #FFFFFF;
 }
 
@@ -221,6 +237,11 @@ img.aligncenter {
 	width: 980px;
 	margin: 0px auto;
 	padding: 0px;
+  background: black;
+  border-radius: 6px;
+  border: 1px solid orange;
+  opacity: 0.7;
+  font-size: 25px;
 }
 
 /* Content */
@@ -277,95 +298,6 @@ img.aligncenter {
 	color: #FFFFFF;
 }
 
-/* Sidebar */
-
-#sidebar-bg {
-	float: left;
-	width: 330px;
-	background: url(images/sidebar-shadow-bg.png) repeat-y left top;
-}
-
-#sidebar {
-	overflow: hidden;
-	width: 270px;
-	padding: 30px 30px 20px 30px;
-	background: url(images/sidebar-bg-bottom.png) no-repeat left bottom;
-}
-
-#sidebar ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-#sidebar li {
-	margin: 0;
-	padding: 0;
-}
-
-#sidebar li ul {
-	margin: 0px 0px;
-	padding-bottom: 30px;
-}
-
-#sidebar li li {
-	padding-left: 30px;
-	line-height: 35px;
-	background: url(images/img01.gif) no-repeat left 5px;
-}
-
-#sidebar li li span {
-	display: block;
-	margin-top: -20px;
-	padding: 0;
-	font-size: 11px;
-	font-style: italic;
-}
-
-#sidebar h2 {
-	height: 38px;
-	margin-bottom: 20px;
-	padding: 12px 0 0 0px;
-	border-bottom: 1px solid #DEDEDE;
-	letter-spacing: -2px;
-	font-size: 30px;
-}
-
-#sidebar p {
-	margin: 0 0px;
-	padding: 0px 20px 20px 20px;
-	text-align: justify;
-}
-
-#sidebar a {
-	border: none;
-}
-
-#sidebar a:hover {
-	text-decoration: underline;
-}
-
-/* Calendar */
-
-#calendar {
-}
-
-#calendar_wrap {
-	padding: 20px;
-}
-
-#calendar table {
-	width: 100%;
-}
-
-#calendar tbody td {
-	text-align: center;
-}
-
-#calendar #next {
-	text-align: right;
-}
-
 /* Footer */
 
 #footer {
@@ -385,12 +317,12 @@ img.aligncenter {
 	text-transform: lowercase;
 	font-family: 'Abel', sans-serif;
 	font-size: 20px;
-	color: #525050;
+	color: #FFFFFF
 }
 
 #footer a {
 	text-decoration: underline;
-	color: #525050;
+	color: #FFFFFF;
 }
 
 #slider {
@@ -420,8 +352,11 @@ img.aligncenter {
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; }
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: bold;
+  margin-left: 30px;
+ }
 
 pre {
   background-color: #eee;
@@ -429,12 +364,13 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #000;
+  color: #FFFFFF;
+  text-decoration: underline;
   &:visited {
     color: #666; }
   &:hover {
-    color: #fff;
-    background-color: #000; } }
+    color: #000;
+    background-color: #fff; } }
 
 div {
   &.field, &.actions {
@@ -442,6 +378,10 @@ div {
 
 #notice {
   color: green; }
+.reference{
+  font-size:small; 
+  vertical-align:top;
+}
 
 .field_with_errors {
   padding: 2px;
