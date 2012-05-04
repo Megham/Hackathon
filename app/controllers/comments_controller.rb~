@@ -1,0 +1,7 @@
+class CommentsController < ApplicationController
+  def create
+    @idea = Idea.find(params[:id])
+    @idea.comments.create(params[:comment])
+    redirect_to @idea
+  end
+end
