@@ -17,11 +17,13 @@
 
 <h4>Comments</h4>
 <% @idea.comments.each do |entry| %>
-<p>
+<div class="comment_body">
   <b><%= entry.name %></b><br/>
-  <%= entry.comment %>
-</p>
+  <div class="comment"><%= entry.comment %></div>
+</div>
+<div class="comment_border"></div>
 <% end %>
+<h4>Post a comment</h4>
 <%= form_for [@idea,@idea.comments.new] do |f| %>
   <div class="field">
     <%= f.label :name %><br />
@@ -34,6 +36,7 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+<% end %><br/>
+
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <%= link_to 'Back', ideas_path %>

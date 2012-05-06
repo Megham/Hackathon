@@ -1,0 +1,15 @@
+.comment_body{
+border: 1px solid #999; 
+margin-left: 30px;
+margin-right: 30px;
+margin-top: 30px;
+}
+.comment{
+margin-left: 60px;
+margin-right: 6px;
+word-wrap: break-word;
+}
+.comment_form{
+margin-left: 30px;
+}
+
