@@ -9,14 +9,16 @@
     <th></th>
   </tr>
 
-<% @ideas.each do |idea| %>
-  <tr>
-    <td><%= idea.title %></td>
-    <td><%= idea.desctiption %></td>
-    <td><%= idea.owner %></td>
-    <td><%= link_to 'Show', idea %></td>
-    <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-    <td><%= link_to 'Destroy', idea, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <% @ideas.each do |idea| %>
+    <tr>
+      <td><%= idea.title %></td>
+      <td><%= idea.desctiption %></td>
+      <td><%= idea.owner %></td>
+      <td><%= link_to 'Show', idea %></td>
+      <% if idea.owner == @gmail_username %>
+        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+        <td><%= link_to 'Destroy', idea, confirm: 'Are you sure?', method: :delete %></td>
+      <% end %>
+    </tr>
+  <% end %>
 </table>

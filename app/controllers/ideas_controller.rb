@@ -3,7 +3,7 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     @ideas = Idea.all
-
+    set_gmail_username
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @ideas }
@@ -14,7 +14,7 @@ class IdeasController < ApplicationController
   # GET /ideas/1.json
   def show
     @idea = Idea.find(params[:id])
-
+    set_gmail_username
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @idea }
@@ -25,6 +25,7 @@ class IdeasController < ApplicationController
   # GET /ideas/new.json
   def new
     @idea = Idea.new
+    @idea.owner = gmail_username
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +36,14 @@ class IdeasController < ApplicationController
   # GET /ideas/1/edit
   def edit
     @idea = Idea.find(params[:id])
+    raise_error_on_intrusion
   end
 
   # POST /ideas
   # POST /ideas.json
   def create
     @idea = Idea.new(params[:idea])
+    raise_error_on_intrusion
 
     respond_to do |format|
       if @idea.save
@@ -57,6 +60,7 @@ class IdeasController < ApplicationController
   # PUT /ideas/1.json
   def update
     @idea = Idea.find(params[:id])
+    raise_error_on_intrusion
 
     respond_to do |format|
       if @idea.update_attributes(params[:idea])
@@ -73,11 +77,21 @@ class IdeasController < ApplicationController
   # DELETE /ideas/1.json
   def destroy
     @idea = Idea.find(params[:id])
+    raise_error_on_intrusion
     @idea.destroy
 
     respond_to do |format|
       format.html { redirect_to ideas_url }
       format.json { head :ok }
     end
+  end
+
+  private
+  def raise_error_on_intrusion
+    raise "Damn!!! you are attempting to hack. You are not authorized to perform this operation." if gmail_username.nil? || @idea.owner != gmail_username 
+  end
+
+  def set_gmail_username
+    @gmail_username = gmail_username
   end
 end

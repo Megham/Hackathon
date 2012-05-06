@@ -17,7 +17,8 @@
   </div>
   <div class="field">
     <%= f.label :owner %><br />
-    <%= f.text_field :owner %>
+    <%= f.text_field :owner, {:disabled => "disabled"} %>
+    <%= f.hidden_field :owner %>
   </div>
   <div class="field">
     <%= f.label :desctiption %><br />

@@ -2,6 +2,8 @@ Dummy::Application.routes.draw do
   resources :ideas do
     resources :comments
   end
+  match '/login' => 'home#login'
+  match '/add_user' => 'home#add_user'
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

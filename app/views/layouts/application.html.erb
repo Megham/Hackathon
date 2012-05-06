@@ -28,8 +28,10 @@
 	<div id="menu">
 		<ul>
       <li id="main_link" class="current_page_item"><%= link_to("Hackathon", root_path) %></li>
-      <li id="register_link"><%= link_to("Register My Idea", new_idea_path)%></li>
-      <li id="ideas_link"><%= link_to("Ideas", ideas_path)%></li>
+      <% if !gmail_username.nil? %>
+        <li id="register_link"><%= link_to("Register My Idea", new_idea_path)%></li>
+        <li id="ideas_link"><%= link_to("Ideas", ideas_path)%></li>
+      <% end %>
 		</ul>
 	</div>
 	<!-- end #menu -->

@@ -22,4 +22,5 @@ function highlightCurrentTab()
           $("#main_link").addClass(className)
           return;
         }
+        $("#ideas_link").addClass(className)
 }
