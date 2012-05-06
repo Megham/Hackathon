@@ -13,7 +13,9 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   # GET /ideas/1.json
   def show
+    raise_error_on_non_logged_in_user
     @idea = Idea.find(params[:id])
+    raise "" if gmail_username.nil?
     set_gmail_username
     respond_to do |format|
       format.html # show.html.erb
@@ -89,7 +91,11 @@ class IdeasController < ApplicationController
 
   private
   def raise_error_on_intrusion
-    raise t("hello") if gmail_username.nil? || @idea.owner != gmail_username 
+    raise t("hello") if gmail_username.nil? || @idea.owner != gmail_username
+  end
+
+  def raise_error_on_non_logged_in_user
+    raise t("hello") if gmail_username.nil?
   end
 
   def set_gmail_username
