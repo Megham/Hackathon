@@ -3,6 +3,7 @@ Dummy::Application.routes.draw do
     resources :comments
   end
   match '/login' => 'home#login'
+  match '/logout' => 'home#logout'
   match '/add_user' => 'home#add_user'
   root :to => 'home#index'
 

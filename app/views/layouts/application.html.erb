@@ -24,8 +24,15 @@
 			</div>
 		</div>
 	</div>
-	<!-- end #header -->
-	<div id="menu">
+  <div>
+    <% if gmail_username.nil? %>
+      <%= link_to("Login", login_path)%>
+    <% else %>
+      <%= gmail_username %>
+      <%= link_to("Logout", logout_path) %>
+    <% end %>
+  </div>
+  <div id="menu">
 		<ul>
       <li id="main_link" class="current_page_item"><%= link_to("Hackathon", root_path) %></li>
       <% if !gmail_username.nil? %>

@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   require "gmail"
+
   def index
   end
 
@@ -15,5 +16,10 @@ class HomeController < ApplicationController
   end
 
   def login
+  end
+
+  def logout
+    sign_out
+    redirect_to root_path
   end
 end

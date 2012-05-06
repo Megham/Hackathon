@@ -26,6 +26,7 @@ class IdeasController < ApplicationController
   def new
     @idea = Idea.new
     @idea.owner = gmail_username
+    raise_error_on_intrusion
 
     respond_to do |format|
       format.html # new.html.erb
@@ -88,7 +89,7 @@ class IdeasController < ApplicationController
 
   private
   def raise_error_on_intrusion
-    raise "Damn!!! you are attempting to hack. You are not authorized to perform this operation." if gmail_username.nil? || @idea.owner != gmail_username 
+    raise t("hello") if gmail_username.nil? || @idea.owner != gmail_username 
   end
 
   def set_gmail_username
