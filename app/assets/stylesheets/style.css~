@@ -110,6 +110,13 @@ img.aligncenter {
 	color: #FFFFFF;
 }
 
+.information{
+border: 1px solid #999; 
+margin-left: 30px;
+margin-right: 30px;
+margin-top: 30px;
+}
+
 #logo h1, #logo p {
 	display: block;
 	margin: 0px;
@@ -201,9 +208,6 @@ img.aligncenter {
 	margin-right: 1px;
 }
 
-.right_align_list {
-  text-align: right;
-}
 
 #menu a {
 	display: block;
@@ -353,6 +357,10 @@ img.aligncenter {
 	height: 300px;
 }
 
+.login_element {
+  text-align: center;
+  margin-top: 10px;
+}
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
