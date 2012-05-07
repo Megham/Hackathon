@@ -10,7 +10,6 @@ body {
 	padding: 0;
 	background: #181818;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
 	color: #FFFFFF;
 }
 
@@ -132,9 +131,20 @@ margin-top: 30px;
 	color: #FFFFFF;
 }
 
-#logo h1 a {
+#logo h1 a, .glower {
 	color: #FFFFFF;
   text-shadow: 2px 2px 34px white;
+}
+
+.username {
+  font-size: 25px;
+  margin: 0px auto;
+  width: 980px;
+  height: 40px;
+}
+
+.username a{
+  float: right;
 }
 
 #logo p {
@@ -377,13 +387,13 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #FFFFFF;
+  color: orange;
   text-decoration: underline;
   &:visited {
     color: #666; }
   &:hover {
-    color: #000;
-    background-color: #fff; } }
+    color: orange;
+    background-color: #000000; } }
 
 div {
   &.field, &.actions {
