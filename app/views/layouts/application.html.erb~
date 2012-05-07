@@ -32,10 +32,10 @@
       <% if !gmail_username.nil? %>
         <li id="register_link"><%= link_to("Register My Idea", new_idea_path)%></li>
         <li id="ideas_link"><%= link_to("Ideas", ideas_path)%></li>
-        <%= "Hi, "+full_name(gmail_username) %>
-        <li class="right_align_list"><%= link_to("Logout", logout_path) %></li>
+        <li><%= "Hi, "+full_name(gmail_username) %></li>
+        <li id="logout_link"><%= link_to("Logout", logout_path) %></li>
       <% else %>
-        <li class="right_align_list"><%= link_to("Login", login_path)%></li>
+        <li id="login_link"><%= link_to("Login", login_path)%></li>
       <% end %>
 		</ul>
 	</div>

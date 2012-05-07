@@ -98,6 +98,9 @@ class IdeasController < ApplicationController
     @user.vote_for(@idea)
     redirect_to @idea
   end
+  def unvote
+    
+  end
 
   private
   def raise_error_on_intrusion

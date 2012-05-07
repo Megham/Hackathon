@@ -1,5 +1,6 @@
 Dummy::Application.routes.draw do
   resources :ideas do
+    get 'vote', on: :member
     resources :comments
   end
   match '/login' => 'home#login'

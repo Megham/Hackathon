@@ -1,6 +1,6 @@
 module IdeasHelper
   def full_name(owner)
-    @user = User.where(email: owner).first.name
-    @user.empty? ? owner : @user
+    @user_name = User.where(email: owner).first.name
+    @user_name.empty? ? owner : @user_name
   end
 end

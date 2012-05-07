@@ -12,7 +12,18 @@
 
 <p>
   <b>Owner:</b>
-  <%= @idea.owner_name %>
+  <%= full_name(@idea.owner) %>
+</p>
+
+<p>
+  <% unless @user.voted_for?(@idea) %>
+     <%= link_to 'Like this idea', vote_idea_path %>
+  <% else %>
+     You liked this idea.
+  <% end %>
+</p>
+<p>
+  Total <%= pluralize(@idea.votes_for, 'Vote') %>
 </p>
 
 <h4>Comments</h4>
