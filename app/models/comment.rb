@@ -11,7 +11,8 @@ class Comment < ActiveRecord::Base
     p mail_ids
     p idea.inspect
     gmail = Gmail.connect("ram.psg.cse@gmail.com", "ramkumar")
-    gmail.deliver do
+    gmail.delay.deliver do
+      p "executing mail"
       to mail_ids
       subject "[Mughil-Hackathon] You have a notificaiton for #{idea.title}"
       html_part do
