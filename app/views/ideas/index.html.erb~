@@ -13,7 +13,7 @@
     <tr>
       <td><%= idea.title %></td>
       <td><%= idea.desctiption %></td>
-      <td><%= idea.owner_name %></td>
+      <td><%= idea.owner %></td>
       <td><%= link_to 'Show', idea %></td>
       <% if idea.owner == @gmail_username %>
         <td><%= link_to 'Edit', edit_idea_path(idea) %></td>

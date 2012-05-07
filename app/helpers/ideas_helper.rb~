@@ -1,0 +1,5 @@
+module IdeasHelper
+  def full_name(owner)
+    User.where(email: owner).first.name or owner
+  end
+end

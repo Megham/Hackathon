@@ -12,7 +12,7 @@
 
 <p>
   <b>Owner:</b>
-  <%= @idea.owner %>
+  <%= full_name(@idea.owner) %>
 </p>
 
 <h4>Comments</h4>
@@ -24,11 +24,11 @@
 <div class="comment_border"></div>
 <% end %>
 <h4>Post a comment</h4>
-<%= form_for [@idea,@idea.comments.new(:name => @gmail_username)] do |f| %>
+<%= form_for [@idea,@idea.comments.new(:name => full_name(@gmail_username))] do |f| %>
 <div class="comment_form">
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, {:disabled => "disabled"} %>
+<!--    <%= f.label :name %><br />
+    <%= f.text_field :name, {:disabled => "disabled"} %> -->
     <%= f.hidden_field :name %>
   </div>
   <div class="field">

@@ -1,5 +1,4 @@
 <form name="login" method="post" action="/add_user">
-  <input name="name" type="text"></input>
   <input name="username" type="text"></input>
   <input name="password" type="password"></input>
   <input type="submit"></input>

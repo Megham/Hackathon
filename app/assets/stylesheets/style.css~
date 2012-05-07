@@ -201,6 +201,9 @@ img.aligncenter {
 	margin-right: 1px;
 }
 
+.right_align_list {
+  text-align: right;
+}
 
 #menu a {
 	display: block;
