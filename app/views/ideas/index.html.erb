@@ -4,21 +4,13 @@
     <th>Title</th>
     <th>Desctiption</th>
     <th>Owner</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
   <% @ideas.each do |idea| %>
     <tr>
-      <td><%= idea.title %></td>
-      <td><%= idea.desctiption %></td>
-      <td><%= idea.owner_name %></td>
-      <td><%= link_to 'Show', idea %></td>
-      <% if idea.owner == @gmail_username %>
-        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-        <td><%= link_to 'Destroy', idea, confirm: 'Are you sure?', method: :delete %></td>
-      <% end %>
+      <td width="30%"><%= idea.title%></td>
+      <td width="50%"><%= link_to idea.desctiption[0..150] + " <<read>>", idea %></td>
+      <td width="20%"><%= idea.owner_name %></td>
     </tr>
   <% end %>
 </table>
