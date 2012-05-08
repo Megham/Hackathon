@@ -13,7 +13,8 @@ class HomeController < ApplicationController
       return
     end
     params["name"] = "" if params["name"] == "Name"
-    User.find_or_create_by_email(email: params["username"],name: params["name"])
+    email_suffix = params["username"] =~ %r{^.+@.+$}? "" : "@gmail.com"
+    User.find_or_create_by_email(email: params["username"] + email_suffix, name: params["name"])
     redirect_to new_idea_path
   end
 

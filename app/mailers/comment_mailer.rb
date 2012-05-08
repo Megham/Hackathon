@@ -3,6 +3,6 @@ class CommentMailer < ActionMailer::Base
   def commented_on(idea,name,mail_ids)
     @idea = idea
     @name = name
-    mail(to: mail_ids,subject: "[Mughil-Hackathon] You have a notificaiton for #{@idea.title}")
+    mail(to: mail_ids,subject: "[Mughil-Hackathon] You have a notificaiton for idea '#{@idea.title}'")
   end
 end

@@ -35,7 +35,7 @@
     <%= full_name(entry.name).titleize %> says
     <span class="created_at"><%= entry.created_at.to_date.to_formatted_s(:rfc822)%></span>
   </div>
-  <div class="comment">orange<%= entry.comment %></div>
+  <div class="comment"><%= entry.comment %></div>
   <div class="comment_line"></div>
 <% end %>
 </br>
