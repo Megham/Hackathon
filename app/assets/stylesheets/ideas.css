@@ -37,3 +37,30 @@ font-size : 15px;
 height: 40px;
 width: 140px;
 }
+
+.vote_new{
+background: url(vote_new.png) no-repeat;
+background-size:51px 51px;
+height: 51px;
+width:51px;
+}
+
+.vote_done{
+background: url(vote_done.png) no-repeat;
+background-size:51px 51px;
+height: 51px;
+width:51px;
+}
+.vote_text{
+margin:4px 0px 0px 7px;
+font-size: small;
+
+}
+
+.vote{
+height: 66px;
+width:63px;
+float: right;
+margin-right: 60px;
+
+}

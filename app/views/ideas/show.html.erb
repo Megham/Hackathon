@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<div class="vote">
+  <% unless @user.voted_for?(@idea) %>
+    <a href="<%= vote_idea_path%>" title="click to vote">
+      <div class="vote_new"></div>
+    </a>
+    <div class="vote_text"><%= pluralize(@idea.votes_for, 'Vote') %></div>
+  <% else %>
+    <div class="vote_done"></div>
+    <% other_vote_count = @idea.votes_for - 1 
+    vote_text = other_vote_count == 0 ? "" : " + #{other_vote_count}"  %>
+    <div class="vote_text"><%=  "#{@user.name}#{vote_text}"  %></div>
+  <% end %>
+</div>
 <div class="field_label">Title:</div>
 <p>
 <%= @idea.title %>
@@ -13,17 +26,6 @@
 <div class="field_label">Owner:</div>
 <p>
 <%= full_name(@idea.owner) %>
-</p>
-
-<p>
-<% unless @user.voted_for?(@idea) %>
-  <%= link_to 'Vote for this idea', vote_idea_path %>
-<% else %>
-  You voted for this idea.
-<% end %>
-</p>
-<p>
-Total <%= pluralize(@idea.votes_for, 'Vote') %>
 </p>
 
 <div class="field_label">Comments</div>
