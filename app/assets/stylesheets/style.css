@@ -374,8 +374,7 @@ text-decoration:none;
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 18px;
-  line-height: 25px;
-  font-weight: bold;
+  line-height: 30px;
   margin-left: 30px;
  }
 
@@ -446,3 +445,12 @@ font-size: 18px;
 margin-top: 10px;
 }
 /* idea new/edit ends */
+/* home/index */
+.section_header{
+  font-size: larger;
+  color: orange;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+/* home/index ends */
+

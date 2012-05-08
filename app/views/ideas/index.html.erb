@@ -2,15 +2,17 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Desctiption</th>
+    <th>Description</th>
     <th>Owner</th>
+    <th>Vote(s)</th>
   </tr>
 
   <% @ideas.each do |idea| %>
     <tr>
       <td width="30%"><%= idea.title%></td>
-      <td width="50%"><%= link_to idea.desctiption[0..150] + " <<read>>", idea %></td>
+      <td width="40%"><%= link_to idea.desctiption[0..100] + "......", idea %></td>
       <td width="20%"><%= full_name(idea.owner) %></td>
+      <td width="10%"><%= idea.votes_for %></td>
     </tr>
   <% end %>
 </table>
