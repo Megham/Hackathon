@@ -10,7 +10,7 @@
     <div class="vote_done"></div>
     <% other_vote_count = @idea.votes_for - 1 
     vote_text = other_vote_count == 0 ? "" : " + #{other_vote_count}"  %>
-    <div class="vote_text"><%=  "#{@user.name}#{vote_text}"  %></div>
+    <div class="vote_text"><%=  full_name(@user.email)+"#{vote_text}"  %></div>
   <% end %>
 </div>
 <div class="field_label">Title:</div>
@@ -32,7 +32,7 @@
   <div class="comment_line"></div>
 <% @idea.comments.each do |entry| %>
   <div class="comment_header">
-    <%= entry.name.titleize %> says
+    <%= full_name(entry.name).titleize %> says
     <span class="created_at"><%= entry.created_at.to_date.to_formatted_s(:rfc822)%></span>
   </div>
   <div class="comment">orange<%= entry.comment %></div>
@@ -40,7 +40,7 @@
 <% end %>
 </br>
 <div class="field_label">Post a comment</div>
-<%= form_for [@idea,@idea.comments.new(:name => full_name(@gmail_username))] do |f| %>
+<%= form_for [@idea,@idea.comments.new(:name => @gmail_username)] do |f| %>
   <div class="comment_form">
     <div class="field">
       <%= f.hidden_field :name %>

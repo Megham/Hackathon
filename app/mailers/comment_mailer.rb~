@@ -1,0 +1,7 @@
+class CommentMailer < ActionMailer::Base
+  default from: "mail@mughil.in"
+  def commented_on(idea,mail_ids)
+    @idea = idea
+    mail(to: mail_ids,subject: "[Mughil-Hackathon] You have a notificaiton for #{@idea.title}")
+  end
+end

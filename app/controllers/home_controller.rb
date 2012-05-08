@@ -12,6 +12,7 @@ class HomeController < ApplicationController
       render :login
       return
     end
+    params["name"] = "" if params["name"] == "Name"
     User.find_or_create_by_email(email: params["username"],name: params["name"])
     redirect_to new_idea_path
   end

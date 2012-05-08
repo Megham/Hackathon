@@ -10,29 +10,21 @@ class Comment < ActiveRecord::Base
     mail_ids = get_mail_ids_of_related_user
     p mail_ids
     p idea.inspect
-    gmail = Gmail.connect("ram.psg.cse@gmail.com", "ramkumar")
-    gmail.delay.deliver do
-      p "executing mail"
-      to mail_ids
-      subject "[Mughil-Hackathon] You have a notificaiton for #{idea.title}"
-      html_part do
-        content_type 'text/html; charset=UTF-8'
-        body "<p>Machan,</p> <p><t/> #{name} has commented on #{idea.title}.</p><p>You can read the comment on <a href='http://mughil.in'>Mughil-Hackathon</a></p>"
-      end
-    end
-    p "mail delivered"
+    CommentMailer.commented_on(idea,full_name(name),mail_ids).deliver
   end
 
   def get_mail_ids_of_related_user
     mail_ids = []
     mail_ids << idea.owner
     mail_ids << Comment.where(:idea_id => idea_id).collect(&:name)
+    mail_ids << idea.voters_who_voted.collect(&:email)
     mail_ids = mail_ids.flatten.uniq
     mail_ids.delete(name)
-    mail_ids.join(",")
   end
 
-  def full_name(name)
-
+  def full_name(owner)
+    @user_name = User.where(email: owner).first.name
+    @user_name.empty? ? owner : @user_name
   end
+
 end

@@ -14,4 +14,5 @@ class ApplicationController < ActionController::Base
   def sign_out
     session["mughil_gmail_user"] = nil
   end
+
 end

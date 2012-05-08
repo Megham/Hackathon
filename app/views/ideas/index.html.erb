@@ -10,7 +10,7 @@
     <tr>
       <td width="30%"><%= idea.title%></td>
       <td width="50%"><%= link_to idea.desctiption[0..150] + " <<read>>", idea %></td>
-      <td width="20%"><%= idea.owner_name %></td>
+      <td width="20%"><%= full_name(idea.owner) %></td>
     </tr>
   <% end %>
 </table>

@@ -10,7 +10,6 @@ body {
 	padding: 0;
 	background: #181818;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
 	color: #FFFFFF;
 }
 
@@ -132,9 +131,20 @@ margin-top: 30px;
 	color: #FFFFFF;
 }
 
-#logo h1 a {
+#logo h1 a, .glower {
 	color: #FFFFFF;
   text-shadow: 2px 2px 34px white;
+}
+
+.username {
+  font-size: 25px;
+  margin: 0px auto;
+  width: 980px;
+  height: 40px;
+}
+
+.username a{
+  float: right;
 }
 
 #logo p {
@@ -248,7 +258,7 @@ margin-top: 30px;
   background: black;
   border-radius: 6px;
   border: 1px solid orange;
-  opacity: 0.7;
+  opacity: 0.8;
   font-size: 25px;
 }
 
@@ -258,42 +268,8 @@ margin-top: 30px;
 	float: right;
 	width: 590px;
 	padding: 30px 30px 0px 30px;
-	background: #FFFFFF url(images/content-bg-bottom.png) no-repeat left bottom;
 }
 
-.post {
-	clear: both;
-	padding-bottom: 10px;
-}
-
-.post .title {
-	padding-top: 10px;
-	letter-spacing: -4px;
-	text-transform: lowercase;
-	font-size: 50px;
-}
-
-.post .title a {
-	border: none;
-	color: #272727;
-}
-
-.post .meta {
-	padding-bottom: 10px;
-	text-align: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	font-style: italic;
-}
-
-.post .meta a {
-}
-
-.post .entry {
-	text-align: justify;
-	margin-bottom: 25px;
-	padding: 10px 0px 0px 0px;
-}
 
 .links {
 	display: block;
@@ -333,33 +309,66 @@ margin-top: 30px;
 	color: #FFFFFF;
 }
 
-#slider {
-	position: relative;
-	width: 590px;
-	margin: 0px auto 20px auto;
+/* idea index */
+
+#page table {
+border-color: orange;
+display: table;
+border-spacing: 4px;
 }
 
-#slider .viewer {
-	width: 590px;
-	height: 300px;
-	overflow: hidden;
-	margin: 0 auto;
+#page table{
+	border: 1px solid #e3e3e3;
+	background-color: #000000;
+        width: 100%;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+  text-align:center;
+  
+}
+#page table td, #page table th {
+	padding: 5px;
 }
 
-#slider .viewer .reel {
-	display: none;
-	height: 300px;
+#page table td a{
+text-decoration:none;
+} 
+#page table thead {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	padding: .2em 0 .2em .5em;
+	text-align: left;
+	color: #4B4B4B;
+	background-color: #C8C8C8;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e3e3e3), color-stop(.6,#B3B3B3));
+	background-image: -moz-linear-gradient(top, #D6D6D6, #B0B0B0, #B3B3B3 90%);
+	border-bottom: solid 1px #999;
+}
+#page table th {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 25px;
+	line-height: 25px;
+	font-style: normal;
+	font-weight: bold;
+	text-align: left;
+  text-align:center;
+}
+#page table td {
+	line-height: 35px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	border-top: 1px solid #fff;
+  color: white;
+  white-space:wrap;
+
 }
 
-#slider .viewer .reel .slide {
-	position: relative;
-	width: 590px;
-	height: 300px;
-}
+/* idea index ends */
 
 .login_element {
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 p, ol, ul, td {
@@ -376,17 +385,21 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #FFFFFF;
+  color: orange;
   text-decoration: underline;
   &:visited {
     color: #666; }
   &:hover {
-    color: #000;
-    background-color: #fff; } }
+    color: orange;
+    background-color: #000000; } }
 
 div {
   &.field, &.actions {
-    margin-bottom: 10px; } }
+     margin-bottom: 10px;
+     margin-top: 15px;
+     font-size: 15px;
+
+ } }
 
 #notice {
   color: orange; }
@@ -406,8 +419,7 @@ div {
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
-  h2 {
+  h4 {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
@@ -419,3 +431,18 @@ div {
   ul li {
     font-size: 12px;
     list-style: square; } }
+
+.field_label{
+  font-size: 25px;
+  color: orange;
+  margin-left: 5px;
+}
+.input_field{
+font-size: 18px;
+}
+
+/* idea new/edit */
+.field{
+margin-top: 10px;
+}
+/* idea new/edit ends */

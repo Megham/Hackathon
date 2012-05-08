@@ -26,14 +26,18 @@
 	</div>
   <div>
   </div>
+  <% if gmail_username.present? %>
+    <div class="username glower">
+      <%= "Hi, "+full_name(gmail_username).titleize %>
+      <%= link_to("[logout]", logout_path) %>
+    </div>
+  <% end %>
   <div id="menu">
 		<ul>
       <li id="main_link" class="current_page_item"><%= link_to("Hackathon", root_path) %></li>
       <% if !gmail_username.nil? %>
         <li id="register_link"><%= link_to("Register My Idea", new_idea_path)%></li>
         <li id="ideas_link"><%= link_to("Ideas", ideas_path)%></li>
-        <li><%= "Hi, "+full_name(gmail_username) %></li>
-        <li id="logout_link"><%= link_to("Logout", logout_path) %></li>
       <% else %>
         <li id="login_link"><%= link_to("Login", login_path)%></li>
       <% end %>
@@ -47,7 +51,7 @@
 	<!-- end #page -->
 </div>
 <div id="footer">
-	<p>2012. hackathon-mughil.com. All rights reserved. Photos by <a href="https://www.facebook.com/nandha">Nandha</a></p>
+	<p>Mughil Technologies ® 2012. www.mughil.in. All rights reserved. Photos by <a href="https://www.facebook.com/nandha">Nandha</a></p>
 </div>
 <!-- end #footer -->
 </body>

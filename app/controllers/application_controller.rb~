@@ -1,3 +1,23 @@
 class ApplicationController < ActionController::Base
+  helper_method :gmail_username
   protect_from_forgery
+  http_basic_authenticate_with :name => "mughil", :password => "hackathon"
+
+  def set_gmail_user(user)
+    session["mughil_gmail_user"] = user.username
+  end
+
+  def gmail_username
+    session["mughil_gmail_user"]
+  end
+
+  def sign_out
+    session["mughil_gmail_user"] = nil
+  end
+
+  def full_name(owner)
+    @user_name = User.where(email: owner).first.name
+    @user_name.empty? ? owner : @user_name
+  end
+
 end

@@ -1,0 +1,3 @@
+<p>Machan,</p> 
+<p><t/> <b><%= @name %></b> has commented on <b><%= @idea.title %></b>.</p>
+<p>You can read the comment on <a href='http://mughil.in'>Mughil-Hackathon</a></p>

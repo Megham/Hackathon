@@ -1,0 +1,6 @@
+module ApplicationHelper
+  def full_name(owner)
+    @user_name = User.where(email: owner).first.name
+    @user_name.empty? ? owner : @user_name
+  end
+end

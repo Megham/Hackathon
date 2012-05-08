@@ -1,7 +1,7 @@
 <%= form_for(@idea) do |f| %>
   <% if @idea.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
+      <h4><%= pluralize(@idea.errors.count, "error") %> prohibited this idea from being saved:</h4>
 
       <ul>
       <% @idea.errors.full_messages.each do |msg| %>
@@ -12,19 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :title, {:class => "field_label"} %><br />
+    <%= f.text_field :title, {:size  => "50", :class=>"input_field"} %>
   </div>
   <div class="field">
-    <%= f.label :owner %><br />
-    <%= f.text_field :owner, {:disabled => "disabled"} %>
     <%= f.hidden_field :owner %>
   </div>
   <div class="field">
-    <%= f.label :desctiption %><br />
-    <%= f.text_area :desctiption %>
+    <%= f.label :desctiption, {:class => "field_label"} %><br />
+    <%= f.text_area :desctiption, {:cols => "40", :class => "input_field" } %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit({:class => "create_comment"}) %>
   </div>
 <% end %>

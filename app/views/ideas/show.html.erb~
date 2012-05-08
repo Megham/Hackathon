@@ -1,57 +1,60 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @idea.title %>
-</p>
-
-<p>
-  <b>Desctiption:</b>
-  <%= @idea.desctiption %>
-</p>
-
-<p>
-  <b>Owner:</b>
-  <%= full_name(@idea.owner) %>
-</p>
-
-<p>
+<div class="vote">
   <% unless @user.voted_for?(@idea) %>
-     <%= link_to 'Like this idea', vote_idea_path %>
+    <a href="<%= vote_idea_path%>" title="click to vote">
+      <div class="vote_new"></div>
+    </a>
+    <div class="vote_text"><%= pluralize(@idea.votes_for, 'Vote') %></div>
   <% else %>
-     You liked this idea.
+    <div class="vote_done"></div>
+    <% other_vote_count = @idea.votes_for - 1 
+    vote_text = other_vote_count == 0 ? "" : " + #{other_vote_count}"  %>
+    <div class="vote_text"><%=  full_name(@user.email)+"#{vote_text}"  %></div>
   <% end %>
-</p>
+</div>
+<div class="field_label">Title:</div>
 <p>
-  Total <%= pluralize(@idea.votes_for, 'Vote') %>
+<%= @idea.title %>
 </p>
 
-<h4>Comments</h4>
+<div class="field_label">Desctiption:</div>
+<p>
+<%= @idea.desctiption %>
+</p>
+
+<div class="field_label">Owner:</div>
+<p>
+<%= full_name(@idea.owner) %>
+</p>
+
+<div class="field_label">Comments</div>
+  <div class="comment_line"></div>
 <% @idea.comments.each do |entry| %>
-<div class="comment_body">
-  <b><%= entry.name %></b><br/>
-  <div class="comment"><%= entry.comment %></div>
-</div>
-<div class="comment_border"></div>
+  <div class="comment_header">
+    <%= entry.name.titleize %> says
+    <span class="created_at"><%= entry.created_at.to_date.to_formatted_s(:rfc822)%></span>
+  </div>
+  <div class="comment">orange<%= entry.comment %></div>
+  <div class="comment_line"></div>
 <% end %>
-<h4>Post a comment</h4>
-<%= form_for [@idea,@idea.comments.new(:name => full_name(@gmail_username))] do |f| %>
-<div class="comment_form">
-  <div class="field">
-<!--    <%= f.label :name %><br />
-    <%= f.text_field :name, {:disabled => "disabled"} %> -->
-    <%= f.hidden_field :name %>
+</br>
+<div class="field_label">Post a comment</div>
+<%= form_for [@idea,@idea.comments.new(:name => @gmail_username)] do |f| %>
+  <div class="comment_form">
+    <div class="field">
+      <%= f.hidden_field :name %>
+    </div>
+    <div class="field">
+      <%= f.text_area :comment, {rows: 5, :class => "input_field"} %>
+    </div>
+    <div class="actions">
+      <%= f.submit ({:class => "create_comment"}) %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment, rows: 5 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-</div>
 <% end %><br/>
 <% if @idea.owner == @gmail_username %>
   <%= link_to 'Edit', edit_idea_path(@idea)  %> |
+  <%= link_to 'Destroy', @idea, confirm: 'Are you sure?', method: :delete %> |
 <% end %>
 <%= link_to 'Back', ideas_path %>
