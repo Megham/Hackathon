@@ -397,6 +397,7 @@ a {
 div {
   &.field, &.actions {
      margin-bottom: 10px;
+     margin-top: 15px;
      font-size: 15px;
 
  } }
@@ -441,3 +442,12 @@ div {
 .input_field{
 font-size: 18px;
 }
+
+
+/* idea new/edit */
+.field{
+margin-top: 10px;
+
+
+}
+/* idea new/edit ends */
