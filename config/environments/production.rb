@@ -59,8 +59,8 @@ Dummy::Application.configure do
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => 'mughil',
-  :user_name            => 'hackathon',
+  :domain               => 'mughil.in',
+  :user_name            => 'hackathon@mughil.in',
   :password             => 'Passw123',
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
