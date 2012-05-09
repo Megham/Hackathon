@@ -6,6 +6,7 @@ Dummy::Application.routes.draw do
   match '/login' => 'home#login'
   match '/logout' => 'home#logout'
   match '/add_user' => 'home#add_user'
+  match '/oauth2callback' => 'home#login'
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

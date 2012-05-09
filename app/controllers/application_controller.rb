@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   http_basic_authenticate_with :name => "mughil", :password => "hackathon"
 
-  def set_gmail_user(user)
-    session["mughil_gmail_user"] = user.username
+  def set_gmail_user(username)
+    session["mughil_gmail_user"] = username
   end
 
   def gmail_username

@@ -39,7 +39,12 @@
         <li id="register_link"><%= link_to("Register My Idea", new_idea_path)%></li>
         <li id="ideas_link"><%= link_to("Ideas", ideas_path)%></li>
       <% else %>
-        <li id="login_link"><%= link_to("Login", login_path)%></li>
+        <li id="login_link"><%= link_to("Login", "https://accounts.google.com/o/oauth2/auth?
+scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&
+state=%2Fprofile&
+redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth2callback&
+response_type=token&
+client_id=237749963050.apps.googleusercontent.com")%></li>
       <% end %>
 		</ul>
 	</div>

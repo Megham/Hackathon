@@ -6,7 +6,7 @@ class HomeController < ApplicationController
 
   def add_user
     begin
-      set_gmail_user( Gmail.connect!(params["username"], params["password"]))
+      set_gmail_user(params["username"])
     rescue
       @error = "Login Failed" 
       render :login
