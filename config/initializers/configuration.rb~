@@ -1,0 +1,7 @@
+#class Configuration
+#  class << self
+#    attr_accessor :client_id,:client_secret,:redirect_uri
+#  end
+#end
+
+APP_CONFIG = YAML.load_file("config/config.yml")[Rails.env]

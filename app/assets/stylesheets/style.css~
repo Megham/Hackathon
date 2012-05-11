@@ -358,7 +358,7 @@ text-decoration:none;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 20px;
 	border-top: 1px solid #fff;
-  color: white;
+  color: white
   white-space:wrap;
 
 }
@@ -374,8 +374,7 @@ text-decoration:none;
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 18px;
-  line-height: 25px;
-  font-weight: bold;
+  line-height: 30px;
   margin-left: 30px;
  }
 
@@ -437,6 +436,9 @@ div {
   color: orange;
   margin-left: 5px;
 }
+.desc_field{
+  word-wrap: break-word;
+}
 .input_field{
 font-size: 18px;
 }
@@ -446,3 +448,12 @@ font-size: 18px;
 margin-top: 10px;
 }
 /* idea new/edit ends */
+/* home/index */
+.section_header{
+  font-size: larger;
+  color: orange;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+/* home/index ends */
+

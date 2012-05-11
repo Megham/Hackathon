@@ -14,7 +14,7 @@
 <body>
   <div id="background">
     <%= image_tag("1.jpg", {class:"stretch"})%>
-    <img src="img.jpg" class="stretch" alt="" />
+<!--    <img src="img.jpg" class="stretch" alt="" /> -->
 </div>
 <div id="wrapper">
 	<div id="header-wrapper">
@@ -40,11 +40,11 @@
         <li id="ideas_link"><%= link_to("Ideas", ideas_path)%></li>
       <% else %>
         <li id="login_link"><%= link_to("Login", "https://accounts.google.com/o/oauth2/auth?
-scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&
-state=%2Fprofile&
-redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth2callback&
+scope=https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&
+state=/profile&
+redirect_uri=#{APP_CONFIG["redirect_uri"]}&
 response_type=code&
-client_id=237749963050.apps.googleusercontent.com")%></li>
+client_id=#{APP_CONFIG["client_id"]}")%></li>
       <% end %>
 		</ul>
 	</div>

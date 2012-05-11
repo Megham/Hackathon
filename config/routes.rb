@@ -5,7 +5,7 @@ Dummy::Application.routes.draw do
   end
   match '/login' => 'home#login'
   match '/logout' => 'home#logout'
-  match '/add_user' => 'home#add_user'
+#  match '/add_user' => 'home#add_user'
   match '/oauth2callback' => 'home#login'
   root :to => 'home#index'
 

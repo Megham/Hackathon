@@ -1,18 +1,18 @@
 
-<table>
+<table style="table-layout: fixed">
   <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Owner</th>
-    <th>Vote(s)</th>
+    <th width="30%">Title</th>
+    <th width="40%">Description</th>
+    <th width="20%">Owner</th>
+    <th width="10%">Vote(s)</th>
   </tr>
 
   <% @ideas.each do |idea| %>
     <tr>
-      <td width="30%"><%= idea.title%></td>
-      <td width="40%"><%= link_to idea.desctiption[0..100] + "......", idea %></td>
-      <td width="20%"><%= full_name(idea.owner) %></td>
-      <td width="10%"><%= idea.votes_for %></td>
+      <td class="desc_field" width="30%"><%= idea.title%></td>
+      <td class="desc_field" width="40%"><%= link_to idea.desctiption[0..50] + "......", idea %></td>
+      <td class="desc_field" width="20%"><%= full_name(idea.owner) %></td>
+      <td class="desc_field" width="10%"><%= idea.votes_for %></td>
     </tr>
   <% end %>
 </table>

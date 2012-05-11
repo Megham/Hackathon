@@ -18,7 +18,7 @@
 <%= @idea.title %>
 </p>
 
-<div class="field_label">Desctiption:</div>
+<div class="field_label">Description:</div>
 <p>
 <%= @idea.desctiption %>
 </p>
@@ -32,10 +32,10 @@
   <div class="comment_line"></div>
 <% @idea.comments.each do |entry| %>
   <div class="comment_header">
-    <%= entry.name.titleize %> says
+    <%= full_name(entry.name).titleize %> says
     <span class="created_at"><%= entry.created_at.to_date.to_formatted_s(:rfc822)%></span>
   </div>
-  <div class="comment">orange<%= entry.comment %></div>
+  <div class="comment"><%= entry.comment %></div>
   <div class="comment_line"></div>
 <% end %>
 </br>

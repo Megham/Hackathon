@@ -1,0 +1,9 @@
+development:
+  client_id: "207961968865.apps.googleusercontent.com"
+  client_secret: "SQ7OqBn21wronetzqCd_Ogtq"
+  redirect_uri: "http://localhost:3000/oauth2callback"
+
+production:
+  client_id: "207961968865-omkr9tb76j9as2i2idm890jvuqvdml8l.apps.googleusercontent.com"
+  client_secret: "jU8FqrAFeYGd7ivMfaP9M0ZJ"
+  redirect_uri: "http://mughil.in/oauth2callback"

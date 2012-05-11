@@ -28,7 +28,7 @@
   </div>
   <% if gmail_username.present? %>
     <div class="username glower">
-      <%= "Hi, "+full_name(gmail_username).titleize %>
+      <%= "Hi "+full_name(gmail_username).titleize+"," %>
       <%= link_to("[logout]", logout_path) %>
     </div>
   <% end %>
@@ -39,7 +39,12 @@
         <li id="register_link"><%= link_to("Register My Idea", new_idea_path)%></li>
         <li id="ideas_link"><%= link_to("Ideas", ideas_path)%></li>
       <% else %>
-        <li id="login_link"><%= link_to("Login", login_path)%></li>
+        <li id="login_link"><%= link_to("Login", "https://accounts.google.com/o/oauth2/auth?
+scope=https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&
+state=/profile&
+redirect_uri=#{APP_CONFIG["redirect_uri"]}&
+response_type=code&
+client_id=#{APP_CONFIG["client_id"]}")%></li>
       <% end %>
 		</ul>
 	</div>

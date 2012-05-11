@@ -7,7 +7,7 @@ class Comment < ActiveRecord::Base
   private
   def send_mail
     mail_ids = get_mail_ids_of_related_user
-    #CommentMailer.commented_on(idea,full_name(name),mail_ids).deliver
+    CommentMailer.commented_on(idea,full_name(name),mail_ids).deliver
   end
 
   def get_mail_ids_of_related_user
