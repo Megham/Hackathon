@@ -9,22 +9,22 @@
   <% else %>
     <div class="vote_done"></div>
     <% other_vote_count = @idea.votes_for - 1 
-    vote_text = other_vote_count == 0 ? "" : " + #{other_vote_count}"  %>
-    <div class="vote_text"><%=  full_name(@user.email)+"#{vote_text}"  %></div>
+    vote_text = other_vote_count == 0 ? "" : " + "+pluralize(other_vote_count,'Other')  %>
+    <div class="vote_text"><%=  "You" + "#{vote_text}"  %></div>
   <% end %>
 </div>
 <div class="field_label">Title:</div>
-<p>
+<p class="desc_field">
 <%= @idea.title %>
 </p>
 
 <div class="field_label">Description:</div>
-<p>
+<p class="desc_field">
 <%= @idea.desctiption %>
 </p>
 
 <div class="field_label">Owner:</div>
-<p>
+<p class="desc_field">
 <%= full_name(@idea.owner) %>
 </p>
 

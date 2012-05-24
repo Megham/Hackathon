@@ -36,25 +36,26 @@ font-weight: bold;
 font-size : 15px;
 height: 40px;
 width: 140px;
+margin-bottom: 15px;
 }
 
 .vote_new{
-background: url(vote_new.png) no-repeat;
+background: url(vote_new.png) no-repeat center;
 background-size:51px 51px;
 height: 51px;
-width:51px;
+width:143px;
 }
 
 .vote_done{
-background: url(vote_done.png) no-repeat;
+background: url(vote_done.png) no-repeat center;
 background-size:51px 51px;
 height: 51px;
-width:51px;
+width:143px;
 }
 .vote_text{
-margin:4px 0px 0px 7px;
+margin-top:4px;
 font-size: small;
-
+text-align: center;
 }
 
 .vote{
