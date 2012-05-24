@@ -14,7 +14,7 @@
 <body>
   <div id="background">
     <%= image_tag("1.jpg", {class:"stretch"})%>
-    <img src="img.jpg" class="stretch" alt="" />
+<!--    <img src="img.jpg" class="stretch" alt="" /> -->
 </div>
 <div id="wrapper">
 	<div id="header-wrapper">
