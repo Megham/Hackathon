@@ -1,0 +1,64 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Dummy
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+BrowsingTest	test/performance/browsing_test.rb	/^class BrowsingTest < ActionDispatch::PerformanceTest$/;"	c
+Comment	app/models/comment.rb	/^class Comment < ActiveRecord::Base$/;"	c
+CommentMailer	app/mailers/comment_mailer.rb	/^class CommentMailer < ActionMailer::Base$/;"	c
+CommentMailerTest	test/functional/comment_mailer_test.rb	/^class CommentMailerTest < ActionMailer::TestCase$/;"	c
+CommentTest	test/unit/comment_test.rb	/^class CommentTest < ActiveSupport::TestCase$/;"	c
+CommentsController	app/controllers/comments_controller.rb	/^class CommentsController < ApplicationController$/;"	c
+CreateComments	db/migrate/20120504103633_create_comments.rb	/^class CreateComments < ActiveRecord::Migration$/;"	c
+CreateIdeas	db/migrate/20120502195429_create_ideas.rb	/^class CreateIdeas < ActiveRecord::Migration$/;"	c
+CreateParticipants	db/migrate/20120524162541_create_participants.rb	/^class CreateParticipants < ActiveRecord::Migration$/;"	c
+CreateUsers	db/migrate/20120507064914_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
+Dummy	config/application.rb	/^module Dummy$/;"	m
+HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
+Idea	app/models/idea.rb	/^class Idea < ActiveRecord::Base$/;"	c
+IdeasController	app/controllers/ideas_controller.rb	/^class IdeasController < ApplicationController$/;"	c
+IdeasHelper	app/helpers/ideas_helper.rb	/^module IdeasHelper$/;"	m
+Participant	app/models/participant.rb	/^class Participant < ActiveRecord::Base$/;"	c
+ParticipantsController	app/controllers/participants_controller.rb	/^class ParticipantsController < ApplicationController$/;"	c
+ThumbsUpMigration	db/migrate/20120507075607_thumbs_up_migration.rb	/^class ThumbsUpMigration < ActiveRecord::Migration$/;"	c
+User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UserTest	test/unit/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+Vote	app/models/vote.rb	/^class Vote < ActiveRecord::Base$/;"	c
+can_accept_participant	app/models/idea.rb	/^  def can_accept_participant$/;"	f	class:Idea
+change	db/migrate/20120502195429_create_ideas.rb	/^  def change$/;"	f	class:CreateIdeas
+change	db/migrate/20120504103633_create_comments.rb	/^  def change$/;"	f	class:CreateComments
+change	db/migrate/20120507064914_create_users.rb	/^  def change$/;"	f	class:CreateUsers
+change	db/migrate/20120524162541_create_participants.rb	/^  def change$/;"	f	class:CreateParticipants
+commented_on	app/mailers/comment_mailer.rb	/^  def commented_on(idea,name,mail_ids)$/;"	f	class:CommentMailer
+create	app/controllers/comments_controller.rb	/^  def create$/;"	f	class:CommentsController
+create	app/controllers/ideas_controller.rb	/^  def create$/;"	f	class:IdeasController
+create	app/controllers/participants_controller.rb	/^  def create$/;"	f	class:ParticipantsController
+destroy	app/controllers/ideas_controller.rb	/^  def destroy$/;"	f	class:IdeasController
+down	db/migrate/20120507075607_thumbs_up_migration.rb	/^  def self.down$/;"	F	class:ThumbsUpMigration
+edit	app/controllers/ideas_controller.rb	/^  def edit$/;"	f	class:IdeasController
+full_name	app/helpers/ideas_helper.rb	/^  def full_name(owner)$/;"	f	class:IdeasHelper
+full_name	app/models/comment.rb	/^  def full_name(owner)$/;"	f	class:Comment
+get_mail_ids_of_related_user	app/models/comment.rb	/^  def get_mail_ids_of_related_user$/;"	f	class:Comment
+gmail_username	app/controllers/application_controller.rb	/^  def gmail_username$/;"	f	class:ApplicationController
+highlightCurrentTab	app/assets/javascripts/main.js	/^function highlightCurrentTab()$/;"	f
+index	app/controllers/home_controller.rb	/^  def index$/;"	f	class:HomeController
+index	app/controllers/ideas_controller.rb	/^  def index$/;"	f	class:IdeasController
+login	app/controllers/home_controller.rb	/^  def login$/;"	f	class:HomeController
+logout	app/controllers/home_controller.rb	/^  def logout$/;"	f	class:HomeController
+new	app/controllers/ideas_controller.rb	/^  def new$/;"	f	class:IdeasController
+raise_error_on_intrusion	app/controllers/ideas_controller.rb	/^  def raise_error_on_intrusion$/;"	f	class:IdeasController
+raise_error_on_non_logged_in_user	app/controllers/ideas_controller.rb	/^  def raise_error_on_non_logged_in_user$/;"	f	class:IdeasController
+send_mail	app/models/comment.rb	/^  def send_mail$/;"	f	class:Comment
+set_gmail_user	app/controllers/application_controller.rb	/^  def set_gmail_user(username)$/;"	f	class:ApplicationController
+set_gmail_username	app/controllers/ideas_controller.rb	/^  def set_gmail_username$/;"	f	class:IdeasController
+show	app/controllers/ideas_controller.rb	/^  def show$/;"	f	class:IdeasController
+sign_out	app/controllers/application_controller.rb	/^  def sign_out$/;"	f	class:ApplicationController
+test_homepage	test/performance/browsing_test.rb	/^  def test_homepage$/;"	f	class:BrowsingTest
+up	db/migrate/20120507075607_thumbs_up_migration.rb	/^  def self.up$/;"	F	class:ThumbsUpMigration
+update	app/controllers/ideas_controller.rb	/^  def update$/;"	f	class:IdeasController
+vote	app/controllers/ideas_controller.rb	/^  def vote$/;"	f	class:IdeasController
