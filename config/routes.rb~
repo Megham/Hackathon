@@ -3,6 +3,7 @@ Dummy::Application.routes.draw do
     get 'vote', on: :member
     resources :comments
   end
+#  constraints :subdomain => "www"
   match '/logout' => 'home#logout'
   match '/oauth2callback' => 'home#login'
   root :to => 'home#index'
