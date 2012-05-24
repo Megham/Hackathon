@@ -3,6 +3,7 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     @ideas = Idea.all
+    raise_error_on_non_logged_in_user
     set_gmail_username
     respond_to do |format|
       format.html # index.html.erb
@@ -13,11 +14,11 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   # GET /ideas/1.json
   def show
+    @idea = Idea.find(params[:id])
+    @user = User.where(email: @gmail_username).first
     raise_error_on_non_logged_in_user
     raise "" if gmail_username.nil?
     set_gmail_username
-    @idea = Idea.find(params[:id])
-    @user = User.where(email: @gmail_username).first
 
     respond_to do |format|
       format.html # show.html.erb
@@ -92,14 +93,12 @@ class IdeasController < ApplicationController
   end
   
   def vote
+    raise_error_on_non_logged_in_user
     @user = User.where(email: gmail_username).first
     @idea = Idea.find(params[:id])
     redirect_to @idea if @user.voted_for?(@idea)
     @user.vote_for(@idea)
     redirect_to @idea
-  end
-  def unvote
-    
   end
 
   private

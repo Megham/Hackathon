@@ -2,8 +2,9 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    raise_error_on_non_logged_in_user
     set_gmail_username
+    @ideas = Idea.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @ideas }
@@ -92,6 +93,7 @@ class IdeasController < ApplicationController
   end
   
   def vote
+    raise_error_on_non_logged_in_user
     @user = User.where(email: gmail_username).first
     @idea = Idea.find(params[:id])
     redirect_to @idea if @user.voted_for?(@idea)
