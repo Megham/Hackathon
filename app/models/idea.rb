@@ -5,6 +5,6 @@ class Idea < ActiveRecord::Base
   acts_as_voteable
 
   def can_accept_participant(user)
-    participants.count < 4 && participants.select{|p| p.user == user}.empty?
+    participants.count < 4 && participants.select{|p| p.user == user}.empty? && user.work_on.nil?
   end
 end
