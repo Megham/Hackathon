@@ -70,5 +70,12 @@ word-wrap: break-word;
 }
 .register{
 float:right;
-margin-right: 70px;
+margin-right: 60px;
+}
+.register input[type=submit]{
+height:30px;
+font-size: 20px;
+margin-top: 10px;
+background-color:orange;
+font-weight: bold;
 }

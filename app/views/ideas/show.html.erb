@@ -14,26 +14,33 @@
   <% end %>
 </div>
 <div class="participant">
-<div class = "register">
+  <div class = "register">
       <% if @idea.can_accept_participant(@user) %>
         <%= form_for [@idea, Participant.new] do |f| %>
-          <%= f.submit({:value => "Register",onclick: "return confirm('Register to work on this project?')"}) %>
+          <%= f.submit({:value => "I'm in",title: "signup to work",onclick: "return confirm('Are you ready to work on this project?')"}) %>
         <% end %>
       <% end %>
-</div>
-  <table style="border:none;">
-    <% @idea.participants.each do |participant|%>
+  </div>
+  <% if @idea.participants.any? %>
+    <table style="border:none;">
       <tr>
-        <td style="border:none;line-height:20px;padding:3px;text-align:right;"><%= participant.user.name %></td><td style="border:none;line-height:20px;padding:3px;text-align:left;width:25px"><%= link_to image_tag("cancel.png",size: "15x15"), [@idea,participant], confirm: 'De-register from this project?', method: :delete if participant.user.email == @user.email %></td>
+        <th style="color:orange;text-align:right;">Participants</th>
       </tr>
-    <% end %>
-  </table>
+
+      <% @idea.participants.each do |participant|%>
+        <tr>
+          <td style="border:none;line-height:20px;padding:3px;text-align:right;"><%= participant.user.name %></td><td style="border:none;line-height:20px;padding:3px;text-align:left;width:25px"><%= link_to image_tag("cancel.png",size: "15x15"), [@idea,participant], confirm: 'De-register from this project?', method: :delete if participant.user.email == @user.email %></td>
+        </tr>
+      <% end %>
+    </table>    
+  <% end %>
 </div>
 <div class="field_label">Title:</div>
 <p class="desc_field">
 <%= @idea.title %>
 </p>
-
+<br/>
+<br/>
 <div class="field_label">Description:</div>
 <p class="desc_field">
 <%= @idea.desctiption %>
