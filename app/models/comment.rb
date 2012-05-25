@@ -12,6 +12,7 @@ class Comment < ActiveRecord::Base
   def get_mail_ids_of_related_user
     mail_ids = []
     mail_ids << idea.owner
+    mail_ids << idea.participants.collect{|p| p.user.email}    
     mail_ids << Comment.where(:idea_id => idea_id).collect(&:name)
     mail_ids << idea.voters_who_voted.collect(&:email)
     mail_ids = mail_ids.flatten.uniq

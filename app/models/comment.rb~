@@ -1,5 +1,4 @@
 class Comment < ActiveRecord::Base
-  require "gmail"
   belongs_to :idea
   after_create :send_mail
   validates_presence_of :comment,:name
