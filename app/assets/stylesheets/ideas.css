@@ -65,10 +65,21 @@ float: right;
 }
 .participant{
 float: right;
-width: 550px;
+width: 200px;
 word-wrap: break-word;
 }
 .register{
 float:right;
-margin-right: 60px;
 }
+.register input[type=submit]
+{
+height:40px;
+font-size: 20px;
+margin-top: 10px;
+background-color:orange;
+font-weight: bold;
+}
+.participant .cancel{
+  margin-left: 5px;
+}
+
