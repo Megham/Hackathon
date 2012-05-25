@@ -2,7 +2,7 @@ Dummy::Application.routes.draw do
   resources :ideas do
     get 'vote', on: :member
     resources :comments
-    resources :participants, :only => [:index, :create]
+    resources :participants, :only => [:create,:destroy]
   end
 
   match '/logout' => 'home#logout'

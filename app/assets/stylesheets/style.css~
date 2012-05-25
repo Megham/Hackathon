@@ -436,9 +436,11 @@ div {
   color: orange;
   margin-left: 5px;
 }
+
 .desc_field{
   word-wrap: break-word;
 }
+
 .input_field{
 font-size: 18px;
 }

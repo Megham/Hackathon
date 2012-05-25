@@ -62,5 +62,13 @@ text-align: center;
 height: 66px;
 width:143px;
 float: right;
-
+}
+.participant{
+float: right;
+width: 550px;
+word-wrap: break-word;
+}
+.register{
+float:right;
+margin-right: 60px;
 }

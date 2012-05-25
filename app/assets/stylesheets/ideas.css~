@@ -60,8 +60,15 @@ text-align: center;
 
 .vote{
 height: 66px;
-width:63px;
+width:143px;
 float: right;
-margin-right: 60px;
-
+}
+.participant{
+float: right;
+width: 550px;
+word-wrap: break-word;
+}
+.register{
+float:right;
+margin-right: 70px;
 }

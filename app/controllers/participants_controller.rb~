@@ -9,16 +9,15 @@ class ParticipantsController < ApplicationController
   def destroy
     raise_error_on_non_logged_in_user
     @idea = Idea.find(params[:idea_id])
-    @participant = @idea.participants.find(params[:id])
-    raise_error_on_intrusion
-    @participant.destroy
+    current_user = User.find_by_email(gmail_username)
+    @idea.participants.where(user: current_user.id).first.destroy
     redirect_to @idea
   end
   
   private
   
   def raise_error_on_intrusion
-    raise t("hello") if gmail_username.nil? || @participant.user_id != User.find_by_email(gmail_username).id
+    raise t("hello") if gmail_username.nil? || @idea.owner != gmail_username
   end
 
   def raise_error_on_non_logged_in_user

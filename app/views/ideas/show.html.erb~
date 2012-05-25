@@ -9,9 +9,25 @@
   <% else %>
     <div class="vote_done"></div>
     <% other_vote_count = @idea.votes_for - 1 
-    vote_text = other_vote_count == 0 ? "" : " + "+pluralize(other_vote_count,'Other')  %>
-    <div class="vote_text"><%=  "You" + "#{vote_text}"  %></div>
+    vote_text = other_vote_count == 0 ? "" : " + "+pluralize(other_vote_count,'other')  %>
+    <div class="vote_text"><%= "You#{vote_text}" %></div>
   <% end %>
+</div>
+<div class="participant">
+<div class = "register">
+      <% if @idea.can_accept_participant(@user) %>
+        <%= form_for [@idea, Participant.new] do |f| %>
+          <%= f.submit({:value => "Register",onclick: "return confirm('Register with this project?')"}) %>
+        <% end %>
+      <% end %>
+</div>
+  <table style="border:none;">
+    <% @idea.participants.each do |participant|%>
+      <tr>
+        <td style="border:none;line-height:20px;padding:3px;text-align:right;"><%= participant.user.name %></td><td style="border:none;line-height:20px;padding:3px;text-align:left;width:25px"><%= link_to image_tag("cancel.png",size: "15x15"), [@idea,participant], confirm: 'De-register from this project?', method: :delete if participant.user.email == @user.email %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>
 <div class="field_label">Title:</div>
 <p class="desc_field">
@@ -53,6 +69,7 @@
     </div>
   </div>
 <% end %><br/>
+
 <% if @idea.owner == @gmail_username %>
   <%= link_to 'Edit', edit_idea_path(@idea)  %> |
   <%= link_to 'Destroy', @idea, confirm: 'Are you sure?', method: :delete %> |
